@@ -10,13 +10,13 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            title: const Text('Cubits'),
+            title: const Text('Cubits conter'),
             subtitle: const Text('Gestor de estado simple'),
             trailing: const Icon(Icons.arrow_back_ios_new_rounded),
             onTap: () => context.push('/cubits'),
           ),
           ListTile(
-            title: const Text('Cubits'),
+            title: const Text('Bloc counter'),
             subtitle: const Text('Gestor de estado simple'),
             trailing: const Icon(Icons.arrow_back_ios_new_rounded),
             onTap: () => context.push('/bloc'),
