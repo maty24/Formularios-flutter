@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formsapp/presentation/blocs/register/register_cubit.dart';
 import 'package:formsapp/presentation/widgets/widgets.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -48,18 +50,21 @@ class _RegisterForm extends StatefulWidget {
 class _RegisterFormState extends State<_RegisterForm> {
   //para obtener el control de mi formulario
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  String username = '';
-  String email = '';
-  String password = '';
+
   @override
   Widget build(BuildContext context) {
+
+    //le hago referencia el cubit y cada vez que cambia el estado el build se renderiza
+    final registerCubit = context.watch<RegisterCubit>();
     return Form(
         key: _formKey,
         child: Column(
           children: [
             CustomTextFormField(
               label: 'Nombre de usuario',
-              onChanged: (value) => username = value,
+              onChanged: (value){
+                registerCubit.
+              },
               validator: (value) {
                 if (value == null || value.isEmpty) return 'Campo requerido';
                 if (value.trim().isEmpty) return 'Campo requerido';
